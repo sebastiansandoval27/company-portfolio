@@ -3,12 +3,16 @@ import Image from "next/image";
 
 const HeroImage = styled.div`
   width: 100vw;
-  height: 450px;
+  height: 500px;
   background-image: url("/img/bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
+
+  @media (min-width: 1200px) {
+    height: 100vh;
+  }
 `;
 
 const Layer = styled.div`
@@ -50,7 +54,48 @@ const Text = styled.div`
     text-transform: uppercase;
     margin: 0;
     padding: 0;
-    //margin-left: 50px;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      width: 45%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    h1 {
+      width: 45%;
+    }
+    span {
+      font-size: 25px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 100px;
+
+    h1 {
+      width: auto;
+      font-size: 85px;
+      margin: 0;
+      padding: 0px;
+      font-family: Poppins, sans-serif;
+      border: none;
+      color: var(--white);
+      border-radius: 5px;
+    }
+    span {
+      width: auto;
+      font-size: 35px;
+      text-align: left;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0px;
+    }
   }
 `;
 
@@ -59,7 +104,7 @@ const Hero = () => {
     <HeroImage>
       <Layer>
         <Text>
-          <span>Construimos</span>
+          <span>Proyectamos</span>
           <h1>TUS SUEÑOS</h1>
         </Text>
       </Layer>

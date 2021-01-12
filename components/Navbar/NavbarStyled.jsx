@@ -81,6 +81,28 @@ export const ContactData = styled.div`
       margin: 0px 10px;
       font-size: 12px;
       color: white;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--orange);
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .contact__data-text {
+      h4 {
+        margin: 0px 10px;
+      }
+      h4:nth-child(2) {
+        display: flex;
+      }
+    }
+    .contact__data-social {
+      i {
+        font-size: 14px;
+      }
     }
   }
 `;
@@ -106,6 +128,15 @@ export const Logo = styled.div`
   }
 
   @media (min-width: 768px) {
+    cursor: pointer;
+
+    a span {
+      transition: all 0.3s ease;
+    }
+
+    a span:hover {
+      color: var(--orange);
+    }
   }
 `;
 
@@ -150,6 +181,11 @@ export const MenuLinks = styled.ul`
 
     li a {
       color: var(--white);
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--orange);
+      }
     }
   }
 `;
@@ -199,6 +235,17 @@ export const ContactNow = styled.div`
   display: none;
 
   @media (min-width: 768px) {
+    cursor: pointer;
+    background-image: linear-gradient(
+      to left,
+      transparent,
+      transparent 50%,
+      var(--white) 50%,
+      var(--white)
+    );
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all 0.25s ease-in;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -209,5 +256,11 @@ export const ContactNow = styled.div`
     border-radius: 7px;
     font-weight: 700;
     color: white;
+
+    &:hover {
+      background-position: 0 0;
+      color: var(--orange-dark);
+      //color: var(--blue-dark);
+    }
   }
 `;
