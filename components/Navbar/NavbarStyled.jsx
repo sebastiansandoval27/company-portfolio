@@ -3,21 +3,30 @@ import styled from "styled-components";
 export const Nav = styled.nav`
   width: 100vw;
   height: 50px;
-  background-color: var(--blue-dark);
+  background-color: var(--blue-dark-hover);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  position: sticky;
+  position: fixed;
+  overflow: hidden;
   top: 0;
   left: 0;
   z-index: 3;
   -webkit-box-shadow: 0px 6px 5px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 6px 5px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
 
   @media (min-width: 768px) {
     flex-direction: column;
     height: auto;
+  }
+  @media (min-width: 992px) {
+    background-color: ${(props) =>
+      props.navColor ? "transparent" : "#171730"};
+    border-bottom: ${(props) =>
+      props.navColor ? "none" : "2px solid #ff7800"};
+    box-shadow: none;
   }
 `;
 
@@ -31,12 +40,11 @@ export const Contact = styled.div`
   padding: 5px 0px;
   z-index: 2;
   display: none;
+  transition: all 0.4s ease;
 
-  @media (min-width: 768px) {
-    display: flex;
-    padding: 0px 10px;
-  }
   @media (min-width: 992px) {
+    display: flex;
+    height: ${(props) => (props.navColor ? "40px" : "0px")};
     padding: 0px 30px;
   }
 `;
@@ -100,10 +108,14 @@ export const ContactData = styled.div`
       }
     }
     .contact__data-social {
+      margin-left: 5%;
       i {
         font-size: 14px;
       }
     }
+  }
+  @media (min-width: 992px) {
+    visibility: ${(props) => (props.navColor ? "visible" : "hidden")};
   }
 `;
 
@@ -129,6 +141,8 @@ export const Logo = styled.div`
 
   @media (min-width: 768px) {
     cursor: pointer;
+    width: 25%;
+    height: auto;
 
     a span {
       transition: all 0.3s ease;
@@ -137,6 +151,11 @@ export const Logo = styled.div`
     a span:hover {
       color: var(--orange);
     }
+  }
+  @media (min-width: 992px) {
+    cursor: pointer;
+    width: 20%;
+    height: auto;
   }
 `;
 
@@ -170,7 +189,7 @@ export const MenuLinks = styled.ul`
   }
 
   @media (min-width: 768px) {
-    width: auto;
+    width: 50%;
     position: inherit;
     opacity: 1;
     flex-direction: row;
@@ -231,36 +250,48 @@ export const Burguer = styled.button`
 `;
 
 export const ContactNow = styled.div`
+  width: 20%;
+  height: 100%;
+  border: none;
   outline: none;
   display: none;
 
   @media (min-width: 768px) {
-    cursor: pointer;
-    background-image: linear-gradient(
-      to left,
-      transparent,
-      transparent 50%,
-      var(--white) 50%,
-      var(--white)
-    );
-    background-position: 100% 0;
-    background-size: 200% 100%;
-    transition: all 0.25s ease-in;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: var(--orange);
-    width: auto;
-    height: 100%;
-    padding: 10px;
-    border-radius: 7px;
-    font-weight: 700;
-    color: white;
+    justify-content: flex-end;
+    button {
+      border: none;
+      cursor: pointer;
+      background-image: linear-gradient(
+        to left,
+        transparent,
+        transparent 50%,
+        var(--white) 50%,
+        var(--white)
+      );
+      background-position: 100% 0;
+      background-size: 200% 100%;
+      transition: all 0.25s ease-in;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--orange);
+      width: 80%;
+      height: 100%;
+      padding: 10px;
+      border-radius: 7px;
+      font-weight: 700;
+      color: white;
 
-    &:hover {
-      background-position: 0 0;
-      color: var(--orange-dark);
-      //color: var(--blue-dark);
+      &:hover {
+        background-position: 0 0;
+        color: var(--orange-dark);
+      }
     }
+  }
+
+  @media (min-width: 1200px) {
+    justify-content: center;
   }
 `;

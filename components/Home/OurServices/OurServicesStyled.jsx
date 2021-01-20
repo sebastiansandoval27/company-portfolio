@@ -7,31 +7,12 @@ export const Container = styled.section`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 
   margin-top: 35px;
 
   @media (min-width: 992px) {
-    margin-top: 150px;
-  }
-`;
-
-export const Title = styled.div`
-  width: 100%;
-  height: 15%;
-  font-family: Poppins, sans-serif;
-  font-size: 30px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 25px;
-  color: var(--blue-dark);
-
-  @media (min-width: 1200px) {
-    width: 80%;
-    font-size: 40px;
-    justify-content: center;
-    padding: 0;
+    margin-top: 80px;
   }
 `;
 
@@ -54,13 +35,7 @@ export const Services = styled.div`
   }
 
   @media (min-width: 992px) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-gap: 5px;
-  }
-
-  @media (min-width: 992px) {
-    margin: 50px 0px;
+    margin: 100px 0px;
     width: 85%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;

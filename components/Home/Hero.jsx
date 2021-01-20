@@ -3,12 +3,13 @@ import Image from "next/image";
 
 const HeroImage = styled.div`
   width: 100vw;
-  height: 500px;
+  height: 450px;
   background-image: url("/img/bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
+  overflow: hidden;
 
   @media (min-width: 1200px) {
     height: 100vh;
@@ -21,7 +22,7 @@ const Layer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(23, 23, 48, 0.7);
+  background-color: rgba(23, 23, 48, 0.6);
 `;
 
 const Text = styled.div`
@@ -32,28 +33,27 @@ const Text = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0px 5px;
-  color: white;
+  font-family: Poppins, sans-serif;
+  color: var(--white);
 
   h1 {
     width: 90%;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     margin: 0;
-    padding: 10px 0px;
+    padding: 0px;
     font-family: Poppins, sans-serif;
-    border: 1px solid var(--white);
-    color: var(--white);
     border-radius: 5px;
-    margin-top: 15px;
+    letter-spacing: 10px;
   }
   span {
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     width: 90%;
-    letter-spacing: 10px;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
+    color: var(--orange);
   }
 
   @media (min-width: 768px) {
@@ -73,9 +73,8 @@ const Text = styled.div`
 
   @media (min-width: 1200px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding-left: 100px;
 
     h1 {
       width: auto;
@@ -89,12 +88,15 @@ const Text = styled.div`
     }
     span {
       width: auto;
-      font-size: 35px;
+      font-size: 100px;
       text-align: left;
       letter-spacing: 10px;
       text-transform: uppercase;
       margin: 0;
+      margin-bottom: -40px;
       padding: 0px;
+      color: transparent;
+      -webkit-text-stroke: 2px white;
     }
   }
 `;

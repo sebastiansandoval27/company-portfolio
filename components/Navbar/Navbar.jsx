@@ -9,19 +9,34 @@ import {
   ContactNow,
 } from "./NavbarStyled";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(false);
+  const [navColor, setNavColor] = useState(true);
+
+  const listenScrollEvent = (event) => {
+    if (window.scrollY < 50) {
+      return setNavColor(true);
+    } else if (window.scrollY > 70) {
+      return setNavColor(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent);
+
+    return () => window.removeEventListener("scroll", listenScrollEvent);
+  }, []);
 
   const handleActiveMenu = () => {
     setActiveMenu(!activeMenu);
   };
 
   return (
-    <Nav>
-      <Contact>
-        <ContactData>
+    <Nav navColor={navColor}>
+      <Contact navColor={navColor}>
+        <ContactData navColor={navColor}>
           <div className="contact__data-text">
             <h4>+57 3118187878</h4>
             <h4>admin@usuario.com</h4>
@@ -65,7 +80,9 @@ const Navbar = () => {
             </Link>
           </li>
         </MenuLinks>
-        <ContactNow>Contactar</ContactNow>
+        <ContactNow>
+          <button>Contactar</button>
+        </ContactNow>
       </Menu>
 
       <Burguer onClick={() => handleActiveMenu()}>

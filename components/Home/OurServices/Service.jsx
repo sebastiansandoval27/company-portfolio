@@ -73,6 +73,7 @@ const ReadMoreBtn = styled.button`
     }
     i:hover {
       color: var(--orange);
+      transform: rotate(180deg);
     }
   }
 `;

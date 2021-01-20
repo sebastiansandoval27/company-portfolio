@@ -1,12 +1,12 @@
-import { Container, Services, Title } from "./OurServicesStyled";
+import SectionTitle from "../SectionTitle/SectionTitle";
+import { Container, Services } from "./OurServicesStyled";
+
 import Service from "./Service";
 
 const OurServices = () => {
   return (
     <Container>
-      <Title>
-        <h3>Servicios</h3>
-      </Title>
+      <SectionTitle title="Servicios" />
       <Services>
         <Service />
         <Service />
